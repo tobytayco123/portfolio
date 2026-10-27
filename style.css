@@ -118,7 +118,7 @@ footer a:hover {
 
 dialog {
   width: min(420px, calc(100% - 64px));
-  padding: 40px 24px 24px;
+  padding: 24px;
   border: 1px solid #ccc;
 }
 
@@ -158,16 +158,151 @@ h1 a {
 
 .intro a[aria-current="page"] {
   color: #0000ee;
-  font-weight: 700;
 }
 
 #close-contact {
-  position: absolute;
-  top: 4px;
-  right: 8px;
   padding: 0 6px;
   border: 0;
   background: transparent;
   font-size: 28px;
   line-height: 1;
+}
+
+.contact-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#contact-form {
+  min-width: 0;
+}
+
+#contact-form input,
+#message {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+#message {
+  resize: none;
+  overflow: hidden;
+}
+
+.phone {
+  color: #0000ff;
+  text-align: center;
+  font-size: calc(1em - 3pt);
+}
+
+.album-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+#album-cover {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.album-detail h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+#track-title {
+  margin-bottom: 12px;
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.preview-note {
+  font-size: 12px;
+  margin: 12px 0;
+}
+
+#tracks {
+  display: grid;
+}
+
+#tracks button {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+}
+
+#album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+#album-grid button {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0 0 8px;
+  border: 0;
+  font-size: 13px;
+}
+
+#album-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .album-detail {
+    grid-template-columns: 1fr;
+  }
+
+  #album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+.music-note {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  fill: #0000ee;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+::selection {
+  background: #0000ff;
+  color: #ffffff;
+}
+
+#streaming-links {
+  text-align: left;
+  color: #0000ff;
+  font-size: calc(1em - 3pt);
+  font-style: italic;
+  margin: auto 0 0;
+  padding-top: 16px;
+  line-height: 1.6;
+}
+
+.album-detail > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+#album-cover {
+  align-self: start;
 }
