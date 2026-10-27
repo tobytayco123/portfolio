@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tobias Luke</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,7 +36,7 @@
     </section>
     <section id="music" class="page" hidden></section>
     <section id="professional" class="page" hidden>
-      <iframe src="https://www.youtube-nocookie.com/embed/P2H9d4kwD0M?enablejsapi=1" title="PAM! (Dr Dog Walkin’ Lady)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe data-src="https://www.youtube-nocookie.com/embed/P2H9d4kwD0M?enablejsapi=1" title="PAM! (Dr Dog Walkin’ Lady)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <p class="professional-copy">Tobias Luke is a skilled music and audio professional, creating advertisement jingles and providing creative direction. He brings musical craft and a clear creative vision to projects, shaping ideas into sound that fits the brief.</p>
       <a href="#contact" class="contact-link">Contact here</a>
     </section>
@@ -58,13 +59,13 @@
     </footer>
   </main>
   <dialog id="contact">
+    <button type="button" id="close-contact" aria-label="Close">×</button>
     <form id="contact-form">
       <label for="email">Your email</label>
       <input id="email" type="email" autocomplete="email" required>
       <label for="message">Message</label>
       <textarea id="message" rows="6" required></textarea>
       <button type="submit">Open email</button>
-      <button type="button" id="close-contact">Close</button>
     </form>
   </dialog>
   <script src="script.js"></script>

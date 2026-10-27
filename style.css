@@ -118,7 +118,7 @@ footer a:hover {
 
 dialog {
   width: min(420px, calc(100% - 64px));
-  padding: 24px;
+  padding: 40px 24px 24px;
   border: 1px solid #ccc;
 }
 
@@ -154,4 +154,20 @@ h1 a {
 #professional iframe {
   height: clamp(160px, calc(100dvh - 460px), 450px);
   aspect-ratio: auto;
+}
+
+.intro a[aria-current="page"] {
+  color: #0000ee;
+  font-weight: 700;
+}
+
+#close-contact {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
 }
