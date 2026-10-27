@@ -1,3 +1,7 @@
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   padding: 32px 16px;
@@ -9,10 +13,20 @@ body {
 main {
   max-width: 800px;
   margin: auto;
+  min-height: calc(100dvh - 64px);
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   margin: 0 0 8px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 700;
 }
 
 p {
@@ -20,6 +34,7 @@ p {
 }
 
 .intro {
+  margin-bottom: 24px;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -40,10 +55,10 @@ iframe {
   border: 0;
 }
 
-main > div {
+.videos {
   display: grid;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 6px;
+  margin: 8px 0;
 }
 
 button {
@@ -63,4 +78,80 @@ button[aria-pressed="true"] {
 
 a {
   color: inherit;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+footer a {
+  display: inline-flex;
+}
+
+footer svg {
+  width: 28px;
+  height: 28px;
+}
+
+footer a:hover {
+  opacity: 0.6;
+}
+
+.personal-links {
+  display: flex;
+  gap: 16px;
+}
+
+.page {
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+[hidden] {
+  display: none;
+}
+
+dialog {
+  width: min(420px, calc(100% - 64px));
+  padding: 24px;
+  border: 1px solid #ccc;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input, textarea {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+.professional-copy {
+  margin: 24px 0 16px;
+  line-height: 1.5;
+}
+
+#videos iframe {
+  height: clamp(160px, calc(100dvh - 430px), 450px);
+  aspect-ratio: auto;
+}
+
+.videos button {
+  padding: 8px 12px;
+}
+
+#professional iframe {
+  height: clamp(160px, calc(100dvh - 460px), 450px);
+  aspect-ratio: auto;
 }
