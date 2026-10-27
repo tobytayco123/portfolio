@@ -21,7 +21,7 @@ function showPage() {
       frame.removeAttribute('data-src');
     });
   });
-  document.querySelectorAll('.intro a').forEach(link => {
+  document.querySelectorAll('.intro a, #mobile-menu nav a').forEach(link => {
     if (link.getAttribute('href') === '#' + page) {
       link.setAttribute('aria-current', 'page');
     } else {
@@ -132,11 +132,7 @@ selectAlbum(0);
 
 document.addEventListener('pointerdown', event => {
   if (event.button !== 0 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const shapes = [
-    '<ellipse cx="8" cy="19" rx="4" ry="3"/><path d="M11 19V3h2v16z"/>',
-    '<ellipse cx="7" cy="19" rx="4" ry="3"/><path d="M10 19V2h2c0 5 7 4 6 10-1-3-4-3-6-5v12z"/>',
-    '<ellipse cx="5" cy="19" rx="4" ry="3"/><ellipse cx="18" cy="16" rx="4" ry="3"/><path d="M8 19V5l13-3v14h-2V7l-9 2v10z"/>'
-  ];
+  const shapes = ["<path d=\"M14 3V13.56C13.41 13.21 12.73 13 12 13C9.79 13 8 14.79 8 17S9.79 21 12 21 16 19.21 16 17V3H14Z\" />", "<path d=\"M12 3V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V7H18V3H12Z\" />", "<path d=\"M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z\" />"];
   const count = 1 + Math.floor(Math.random() * 3);
   for (let i = 0; i < count; i++) {
     const note = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -168,4 +164,21 @@ function resizeMessage() {
 messageField.addEventListener('input', resizeMessage);
 window.addEventListener('resize', () => {
   if (contact.open) resizeMessage();
+});
+
+const menu = document.getElementById('mobile-menu');
+const menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', () => {
+  menu.showModal();
+  menuToggle.setAttribute('aria-expanded', 'true');
+});
+document.getElementById('close-menu').addEventListener('click', () => menu.close());
+menu.addEventListener('close', () => menuToggle.setAttribute('aria-expanded', 'false'));
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.close()));
+menu.addEventListener('click', event => {
+  const bounds = menu.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) menu.close();
+});
+window.matchMedia('(max-width: 600px)').addEventListener('change', event => {
+  if (!event.matches && menu.open) menu.close();
 });
