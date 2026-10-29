@@ -137,11 +137,6 @@ h1 a {
   text-decoration: none;
 }
 
-.professional-copy {
-  margin: 24px 0 16px;
-  line-height: 1.5;
-}
-
 #videos iframe {
   height: clamp(160px, calc(100dvh - 430px), 450px);
   aspect-ratio: auto;

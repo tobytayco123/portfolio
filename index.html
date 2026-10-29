@@ -14,7 +14,7 @@
 </head>
 <body>
   <main>
-    <h1><a href="#videos">tobias<strong>luke</strong></a></h1>
+    <h1><a href="#music">tobias<strong>luke</strong></a></h1>
     <button id="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="intro">
       <span class="personal-links">
@@ -26,21 +26,24 @@
       <span class="links">
         <a href="#videos">Videos</a>
         <a href="#music">Music</a>
-        <a href="#professional">Professional</a>
+
       </span>
     </nav>
-    <section id="videos" class="page">
+    <section id="videos" class="page" hidden>
     <iframe id="video" src="https://www.youtube-nocookie.com/embed/g3ohbI4G5Uw?enablejsapi=1" title="Together — Tobias Luke" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="videos">
       <button data-video="g3ohbI4G5Uw" aria-pressed="true">Together — feat. Matt Sligar</button>
+      <button data-video="P2H9d4kwD0M" aria-pressed="false">PAM! (Dr Dog Walkin’ Lady)</button>
       <button data-video="gkSSXs909ds" aria-pressed="false">Release day RASTA PASTA!</button>
       <button data-video="VZnmPQnUPR8" aria-pressed="false">All The Time Now! — feat. George Ariza</button>
     </div>
     </section>
     <section id="about" class="page" hidden>
-      <p>Musician / Audio Tech</p>
+      <p>My name is Tobias Luke and I am a freelance Audio Engineer, Producer, Composer and Mixer, dedicated to bringing artists visions from an idea to a finished releasable product. I’m a classically trained pianist and a recent graduate of Berklee College of Music with a degree in “<em>Independent recording and production</em>” which covers everything from music composition to sound engineering to mixing and mastering.</p>
+      <p>My home base is my own professional home studio in Brooklyn but I also have access to many different recording spaces throughout the city to fit whatever needs you may have. Whether it’s being the audio engineer for the composition you already have, collaborating and assisting through the writing and conceptualization of the music, or even just putting the finishing touches on your project, I am well equipped to help. You are in good hands!</p>
+      <p>Have a project in mind? Feel free to reach out through the <a href="#contact" class="contact-link"><em>Contact</em></a> section of this website. I’d love to hear what you’re working on!</p>
     </section>
-    <section id="music" class="page" hidden>
+    <section id="music" class="page">
       <div class="album-detail">
         <img id="album-cover" alt="">
         <div>
@@ -52,11 +55,6 @@
         </div>
       </div>
       <div id="album-grid"></div>
-    </section>
-    <section id="professional" class="page" hidden>
-      <iframe data-src="https://www.youtube-nocookie.com/embed/P2H9d4kwD0M?enablejsapi=1" title="PAM! (Dr Dog Walkin’ Lady)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <p class="professional-copy">Tobias Luke is a skilled music and audio professional, creating advertisement jingles and providing creative direction. He brings musical craft and a clear creative vision to projects, shaping ideas into sound that fits the brief. Contact for creative opportunities, collaborations, jobs, or if you want to send a pic of your dog.</p>
-      <a href="#contact" class="contact-link">Contact here</a>
     </section>
     <footer>
       <a href="https://music.youtube.com/@Tobias_Luke" aria-label="YouTube Music" title="YouTube Music" target="_blank" rel="noopener noreferrer">
@@ -78,7 +76,7 @@
   </main>
   <dialog id="mobile-menu" aria-label="Navigation">
     <button id="close-menu" type="button" aria-label="Close menu">×</button>
-    <a href="#videos" aria-label="Homepage"><img class="menu-favicon" src="assets/favicon.png" alt=""></a>
+    <a href="#music" aria-label="Homepage"><img class="menu-favicon" src="assets/favicon.png" alt=""></a>
     <nav>
       <a href="#about">About</a>
       <a href="assets/Tobias-Luke_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -86,7 +84,7 @@
       <a href="https://www.instagram.com/tobytayco123/" target="_blank" rel="noopener noreferrer">Social</a>
       <a href="#videos" class="menu-pages">Videos</a>
       <a href="#music">Music</a>
-      <a href="#professional">Professional</a>
+
     </nav>
   </dialog>
   <dialog id="contact">
