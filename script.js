@@ -83,7 +83,7 @@ function selectAlbum(index) {
   const streaming = document.getElementById('streaming-links');
   streaming.replaceChildren(document.createTextNode('Audio preview! Full release available on:'), document.createElement('br'));
   const services = [
-    ['youtubeMusic', 'YouTube Music', 'https://music.youtube.com/@Tobias_Luke'],
+    ['youtubeMusic', 'YouTube Music', 'https://youtube.com/channel/UC0MjmSezW1TWqZBj5ESxQRw?si=cqu19Ug5m9Zk3ReC'],
     ['spotify', 'Spotify', 'https://open.spotify.com/artist/6AdGrIxfwfN20nZf3G04xV'],
     ['appleMusic', 'Apple Music', selectedAlbum.url],
     ['soundcloud', 'SoundCloud', 'https://soundcloud.com/tobiasluketaylor-cohen'],
